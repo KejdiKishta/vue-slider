@@ -47,11 +47,24 @@ createApp ({
         },
       ],
       index: 0,
+      autoplayFlag: false,
     }
   },
   methods: {
-    showImage: function(curElem) {
-      curEle
+    interval: function() {
+      this.autoplayFlag = !this.autoplayFlag
+      console.log(this.autoplayFlag);
+      const play = setInterval(() => {
+        if (this.autoplayFlag) {          
+          if (this.index === this.images.length - 1) {
+            this.index = 0
+          } else {
+            this.index++;
+          }
+        } else {
+          clearInterval(play);
+        }
+      },3000)
     }
   }
 }).mount("#app")

@@ -78,8 +78,9 @@
                 </div>
                 <!-- immagini interne -->
                 <img
-                  v-for="img in images"
-                  class="img-fluid my-thumbnail active"
+                  v-for="(img, forIndex) in images"
+                  @click="index = forIndex"
+                  class="img-fluid my-thumbnail" :class="{'active' : forIndex === index}"
                   :src="img.image"
                   alt="Thumbnail of Marvel's Spiderman Miles Morale picture"
                 />
@@ -92,7 +93,7 @@
             <button id="my-order-button" class="btn btn-primary">
               Inverti l'ordine di scorrimento
             </button>
-            <button id="my-stop-button" class="btn btn-primary">
+            <button @click="interval" id="my-stop-button" class="btn btn-primary">
               Interrompi / Fai ripartire lo scorrimento
             </button>
           </div>
