@@ -59,6 +59,7 @@ div.my-next > span::after{
 
 div.my-carousel-item{
     display: none;
+    background-color: black;
 }
 
 div.my-carousel-item.active{
@@ -73,8 +74,7 @@ div.my-carousel-item{
 
 div.my-carousel-item img{
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+    object-position: center;
 }
 
 div.item-description{
@@ -101,9 +101,8 @@ div#my-carousel .my-thumbnails .my-thumbnail{
 }
 
 div#my-carousel .my-thumbnails .my-thumbnail img{
-    object-fit: cover;
     height: 100%;
-    width: 100%;
+    object-position: center;
 }
 
 div#my-carousel .my-thumbnails .my-thumbnail.active{

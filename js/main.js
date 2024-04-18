@@ -73,7 +73,7 @@ createApp ({
         // } else {
         //   clearInterval(play);
         // }
-        this.autoplayFlag ? this.index === this.images.length -1 && this.inverseFlag === flase ? this.index = 0 : this.inverseFlag ? this.index === 0 ? this.index = this.images.length -1 : this.index-- : this.index++ : clearInterval(play);
+        this.autoplayFlag ? this.index === this.images.length -1 && this.inverseFlag === false ? this.index = 0 : this.inverseFlag ? this.index === 0 ? this.index = this.images.length -1 : this.index-- : this.index++ : clearInterval(play);
       },3000)
     },
     toggleInverse: function () {
