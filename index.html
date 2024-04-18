@@ -65,25 +65,25 @@
               </div>
               <div class="my-thumbnails position-relative">
                 <!-- prev -->
-                <div class="my-previous position-absolute">
+                <div 
+                @click="index === 0 ? index = images.length -1 : index--"
+                class="my-previous position-absolute">
                   <span class="my-prev-hook"></span>
                 </div>
                 <!-- next -->
-                <div class="my-next position-absolute">
+                <div 
+                @click="index === images.length - 1 ? index = 0 : index++"
+                class="my-next position-absolute">
                   <span class="my-next-hook"></span>
                 </div>
                 <!-- immagini interne -->
-                <!-- <img
+                <img
+                  v-for="img in images"
                   class="img-fluid my-thumbnail active"
-                  src="./img/01.webp"
+                  :src="img.image"
                   alt="Thumbnail of Marvel's Spiderman Miles Morale picture"
                 />
-                <img
-                  class="img-fluid my-thumbnail"
-                  src="./img/02.webp"
-                  alt="Thumbnail of Ratchet & Clank: Rift Apart picture"
-                /> -->
-                <!-- etc ... -->
+                <!-- /immagini interne -->
               </div>
             </div>
           </div>
