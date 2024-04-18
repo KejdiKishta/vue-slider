@@ -56,23 +56,24 @@ createApp ({
       this.autoplayFlag = !this.autoplayFlag
       // console.log(this.autoplayFlag);
       const play = setInterval(() => {
-        if (this.autoplayFlag) {          
-          if (this.index === this.images.length - 1 && this.inverseFlag === false) {
-            this.index = 0
-          } else {
-            if(this.inverseFlag) {
-              if (this.index === 0) {
-                this.index = this.images.length - 1;
-              } else {
-                this.index--;
-              }
-            } else {
-              this.index++;
-            }
-          }
-        } else {
-          clearInterval(play);
-        }
+        // if (this.autoplayFlag) {          
+        //   if (this.index === this.images.length - 1 && this.inverseFlag === false) {
+        //     this.index = 0
+        //   } else {
+        //     if(this.inverseFlag) {
+        //       if (this.index === 0) {
+        //         this.index = this.images.length - 1;
+        //       } else {
+        //         this.index--;
+        //       }
+        //     } else {
+        //       this.index++;
+        //     }
+        //   }
+        // } else {
+        //   clearInterval(play);
+        // }
+        this.autoplayFlag ? this.index === this.images.length -1 && this.inverseFlag === flase ? this.index = 0 : this.inverseFlag ? this.index === 0 ? this.index = this.images.length -1 : this.index-- : this.index++ : clearInterval(play);
       },3000)
     },
     toggleInverse: function () {
