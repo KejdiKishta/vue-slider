@@ -48,23 +48,36 @@ createApp ({
       ],
       index: 0,
       autoplayFlag: false,
+      inverseFlag: false,
     }
   },
   methods: {
     interval: function() {
       this.autoplayFlag = !this.autoplayFlag
-      console.log(this.autoplayFlag);
+      // console.log(this.autoplayFlag);
       const play = setInterval(() => {
         if (this.autoplayFlag) {          
-          if (this.index === this.images.length - 1) {
+          if (this.index === this.images.length - 1 && this.inverseFlag === false) {
             this.index = 0
           } else {
-            this.index++;
+            if(this.inverseFlag) {
+              if (this.index === 0) {
+                this.index = this.images.length - 1;
+              } else {
+                this.index--;
+              }
+            } else {
+              this.index++;
+            }
           }
         } else {
           clearInterval(play);
         }
       },3000)
+    },
+    toggleInverse: function () {
+      this.inverseFlag = !this.inverseFlag;
+      // console.log(this.inverseFlag);
     }
   }
 }).mount("#app")
